@@ -12,7 +12,6 @@ export const Component = ({ drawn, handleDrawChange }) => {
     for (let i = 0; i < drawn.length; i++) {
       c.fillRect(drawn[i].x, drawn[i].y, 3, 3);
     }
-
   }, [drawn]);
 
   const handleMouseMove = (event) => {
@@ -28,12 +27,17 @@ export const Component = ({ drawn, handleDrawChange }) => {
     setIsDrawing(false);
   }
 
+  const handleClear = (event) => {
+    event.preventDefault();
+    handleDrawChange([]);
+  }
+
   return (
   <div>
     <h1>Draw something:</h1>
     <canvas onMouseMove={handleMouseMove} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} style={{border: "1px solid black"}}></canvas>
-    <script>
-    </script>
+    <br />
+    <button onClick={handleClear}>Clear</button>
   </div>
   )
 };
