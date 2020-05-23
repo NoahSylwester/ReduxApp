@@ -4,6 +4,7 @@ import './App.css';
 import { Container as Counter } from './counter/container';
 import { Container as Writer } from './writer/container';
 import { Container as Drawer } from './drawer/container';
+import { Container as Colorer } from './colorer/container';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Counter />
         <Writer />
         <Drawer />
+        <Colorer />
       </div>
   );
 }
