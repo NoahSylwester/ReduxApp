@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-export const Component = ({ drawn, handleDrawChange }) => {
+export const Component = ({ drawn, handleDrawChange, handleClear }) => {
 
   const [isDrawing, setIsDrawing] = useState(false);
 
@@ -16,7 +16,7 @@ export const Component = ({ drawn, handleDrawChange }) => {
 
   const handleMouseMove = (event) => {
     if (isDrawing) {
-      handleDrawChange([...drawn, { x: event.nativeEvent.offsetX, y: event.nativeEvent.offsetY }])
+      handleDrawChange({ x: event.nativeEvent.offsetX, y: event.nativeEvent.offsetY })
     }
   }
 
@@ -25,11 +25,6 @@ export const Component = ({ drawn, handleDrawChange }) => {
   }
   const handleMouseUp = () => {
     setIsDrawing(false);
-  }
-
-  const handleClear = (event) => {
-    event.preventDefault();
-    handleDrawChange([]);
   }
 
   return (

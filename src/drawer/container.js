@@ -8,7 +8,8 @@ const mapStateToProps = state => {
 };
 const mapDispatchToProps = dispatch => {
   return {
-    handleDrawChange: (drawnPixels) => dispatch({ type: 'DRAW', value: drawnPixels }),
+    handleDrawChange: (drawnPixel) => dispatch({ type: 'DRAW', value: drawnPixel }),
+    handleClear: () => dispatch({ type: 'CLEAR' })
   }
 };
 export const Container = connect(mapStateToProps, mapDispatchToProps)(Component);

@@ -1,7 +1,9 @@
 export const drawReducer = function (state = [], action) {
     switch (action.type) {
       case "DRAW":
-        return action.value;
+        return [...state, action.value];
+      case "CLEAR":
+        return [];
       default:
         return state;
     }
